@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>jQuery Simples 3D Plugin Demo</title>
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+<![endif]-->
+<style>
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Artifika);
+/*---------------------
+	 reset
+----------------------- */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p
+, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th {
+  text-align: left;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+}
+
+body {
+  color: white;
+  font-size: 62.5%;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+  line-height: 1.5;
+}
+
+/*---------------------
+ Simple3Dmove_Sample
+----------------------- */
+#container {
+  min-height: 900px;
+  width: 120%;
+}
+input[type=text], select {
+    width: 100%;
+		background-color:black;
+		color:white;
+    padding: 12px 20px;
+		opacity:0.4;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+		-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;
+}
+#simple3D {
+  position: absolute;
+  z-index: 1;
+  width: 120%;
+  height: 900px;
+}
+#simple3D div {
+  min-height: 1100px;
+  width: 120%;
+}
+#simple3D div.dot {
+  background: url('https://i.imgur.com/7T9364v.gif?noredirect');
+	background-size: 125% auto;
+}
+#content {
+  position: relative;
+  z-index: 999;
+  margin: 0 30px;
+  padding: 0 0 10px;
+  max-width: 1300px;
+  width: 100%;
+  font-size: 1.6em;
+}
+#header {
+  padding: 50px 0 0;
+}
+#header h1, #header p {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Artifika', serif;
+}
+section {
+  margin: 0 0 10px;
+}
+section img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 200px;
+  height: 200px;
+}
+section p {
+  margin: 0 0 0;
+}
+section .prevbtn {
+  margin: 35px 0 0;
+  text-align: center;
+}
+section .prevbtn a {
+  display: block;
+  padding: 15px;
+  border: dotted 5px #eaa2c6;
+  border-radius: 8px;
+  background: #f6e4ed;
+  color: #e178ad;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 white;
+}
+section .prevbtn a:hover {
+  background: #eaa2c6;
+  color: #f6e4ed;
+  text-shadow: 1px 1px 0 #d74f93;
+}
+#footer p {
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<div id="container">
+
+<!-- jquery.simple3D.js の部分ここから -->
+<div id="simple3D">
+	<div class="dot"></div>
+</div>
+<!-- jquery.simple3D.js の部分ここまで -->
+
+<div id="content">
+
+<header id="header">
+	<h1>jQuery Simples 3D Plugin Demo</h1>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+</header>
+
+	<section>
+		<center>
+		<form action = "http://127.0.0.1:5000/login" method = "post">
+		<p>favicon.ico</p>
+		Marshall Bruce Mathers III (born October 17, 1972), known professionally as Eminem (; often stylized as EMINM), is an American rapper, songwriter, record producer, record executive, and actor.Eminem is the best-selling artist of the 2000s in the United States. Throughout his career, he has had 10 number-one albums on the Billboard 200 and five number-one singles on the Billboard Hot 100 With more than 47.4 million albums and 107.5 million singles sold in the U.S. and 220 million records globally, he is among the worlds best-selling artists of all time and is consistently cited as one of the greatest and most influential artists in any genre. He is the only artist to have nine albums consecutively debut at number one on the Billboard 200. Rolling Stone ranked him 83rd on its list of 100 Greatest Artists of All Time, calling him the King of Hip Hop.After his debut album Infinite (1996) and then Slim Shady EP (1997), Eminem signed with Dr. Dres Aftermath Entertainment and subsequently achieved mainstream popularity in 1999 with The Slim Shady LP, which earned him his first Grammy Award for Best Rap Album. His next two releases, 2000s The Marshall Mathers LP and 2002s The Eminem Show, were worldwide successes, with each being certified diamond in U.S. sales and both winning Best Rap Album Grammy Awards making Eminem the first artist to win the award for three consecutive LPs. They were followed by Encore in 2004, another critical and commercial success. Eminem went on hiatus after touring in 2005, releasing Relapse in 2009 and Recovery in 2010. Both won Grammy Awards and Recovery was the best-selling album of 2010 worldwide, the second time he had the international best-selling album of the year (after The Eminem Show). Eminems eighth album, 2013s The Marshall Mathers LP 2, won two Grammy Awards, including Best Rap Album; it expanded his record for the most wins in that category and his Grammy total to 15. In 2017, he released his ninth studio album, Revival. On August 31, 2018, Eminem released his tenth studio album, Kamikaze.In addition to his solo career, Eminem is an original member of the Midwest hip hop groups Soul Intent and D12. He is also known for his collaborations with fellow Detroit-based rapper Royce da 59; the two are collectively known as Bad Meets Evil. Eminem has developed other ventures, including Shady Records, with manager Paul Rosenberg, which helped launch the careers of artists such as 50 Cent. Eminem has also established his own channel, Shade 45, on Sirius XM Radio. In November 2002, he starred in the hip hop film 8 Mile, which won the Academy Award for Best Original Song for Lose Yourself, becoming the first rap artist to ever win the award. Eminem has made cameo appearances in the films The Wash (2001), Funny People (2009), and The Interview (2014), and the television series Entourage (2010).
+		<p><input type = "text" name = "nm" id="nm" placeholder="Your name.."/></p>
+		<input type="image" name="submit" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 50px;" />
+	</form>
+</center>
+</section>
+
+	<!-- footer -->
+</div><!-- fin_content -->
+
+</div><!--container-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+/*! jQuery.Simples3D (http://memocarilog.info/jquery/6014)
+ * lastupdate: 2014-04-09
+ * author: Saori Miyazaki http://memocarilog.info
+ * License: MIT
+*/
+
+;(function($, undefined){
+
+	$.fn.simple3D = function(options){
+
+		var thisObj = this;
+
+		var opts = $.extend({}, $.fn.simple3D.defaults, options );
+
+		$(function(){
+
+	        if (thisObj.length == 0) return false;
+	        var item = thisObj[0];
+
+			var childWidth = $(item).children().width()
+			var childHeight = $(item).children().height()
+
+			var parentWidth = thisObj.width();
+			var parentHeight = thisObj.height();
+
+			var offset_x = childWidth - parentWidth;
+			var offset_y = childHeight - parentHeight;
+
+			var itemChild = thisObj.children();
+
+			if( opts.bgImage == false){
+
+				// childのスタート位置を設定
+				var startX = (parentWidth -  childWidth) / 2;
+				var startY = (parentHeight -  childHeight) / 2;
+				thisObj.css({
+					"position": "relative",
+					"overflow": "hidden"
+				});
+				itemChild.css({
+					"position": "absolute",
+					"left":startX,
+					"top":startY
+				});
+
+			// 	background true だったとき
+			}　else {
+				thisObj.css({
+					"overflow": "hidden"
+				});
+				itemChild.css({
+					"position": "absolute",
+					"left": itemChild.position().left,
+					"top": itemChild.position().top,
+					"background-position": "0px 0px"
+				});
+			}　//　background true だったとき終わり
+			if (opts.moveX > 5 || opts.moveY > 5) return false;
+			var sort = [5, 4, 3, 2, 1];
+			opts.moveX = sort[parseFloat(opts.moveX)-1];
+	       	opts.moveY = sort[parseFloat(opts.moveY)-1];
+			opts.moveX = Math.floor(opts.moveX) *6 / 10 + 1 ;
+			opts.moveY = Math.floor(opts.moveY) *6 / 10 + 1 ;
+
+			// 対象エリアをdocument全体にするか、指定エリアだけにするか
+			var targetArea = (opts.targetAll == true) ? $(document) : thisObj ;
+
+			// カーソルが動いた時の処理以下
+			targetArea.mousemove(function(e){
+
+					var cursorX = e.clientX - thisObj.offset().left;
+					cursorX = (cursorX > parentWidth) ? parentWidth : cursorX ;
+					var centerX = (cursorX / parentWidth * offset_x) - offset_x / 2 ;
+
+					var cursorY = e.clientY - thisObj.offset().top + $('html').scrollTop();
+					cursorY = (cursorY > parentHeight) ? parentHeight : cursorY ;
+					var centerY = (cursorY / parentHeight * offset_y) - offset_y / 2;
+
+					for (var i=1; i<= itemChild.length; i++){
+
+						if( opts.bgImage == false){
+
+							// Xの移動値算出と移動
+							var childLeft = parseFloat($(itemChild[i-1]).css('left'));
+							var newLeft =  centerX * (i / itemChild.length) - offset_x / 2;
+							newLeft = Math.floor( (newLeft + childLeft) / opts.moveX );
+							newLeft = (opts.reverseX == false) ? newLeft : -newLeft ;
+							$(itemChild[i-1]).css('left', newLeft);
+
+							// Yの移動値算出と移動
+							var childTop = parseFloat($(itemChild[i-1]).css('top'));
+							var newTop = centerY * (i / itemChild.length) - offset_y / 2;
+							newTop = Math.floor( (newTop + childTop) / opts.moveY );
+							newTop = (opts.reverseY == false) ? newTop : -newTop ;
+							$(itemChild[i-1]).css('top', newTop );
+
+						} else {
+						// backgroundを動かす場合
+
+							// Xの移動値算出
+							var bgPosX = parseFloat($(itemChild[i-1]).css('left'));
+							var newLeft =  centerX * (i / itemChild.length) - offset_x / 2;
+							newLeft = Math.floor( (newLeft + bgPosX) / opts.moveX );
+							newLeft = (opts.reverseX == false) ? newLeft : -newLeft ;
+							// Yの移動値算出
+							var bgPosY = parseFloat($(itemChild[i-1]).css('top'));
+							var newTop = centerY * (i / itemChild.length) - offset_y / 2　;
+							newTop = Math.floor( (bgPosY + newTop)  / opts.moveY  );
+							newTop = (opts.reverseY == false) ? newTop : -newTop ;
+
+							// 背景画像移動
+							$(itemChild[i-1]).css('background-position',newLeft+'px ' + newTop +'px');
+
+						} // backgroundを動かす場合ここまで
+					} // for文ここまで
+			});	// カーソルが動いた時の処理ここまで
+		});
+	return this;
+	};
+
+	// デフォルト値設定
+	$.fn.simple3D.defaults = {
+		moveX: 3 ,
+		moveY: 3 ,
+		bgImage: false,
+		targetAll: false,
+		reverseX: false,
+		reverseY: false
+	};
+
+})(jQuery);
+</script>
+<script>
+	$("#simple3D").simple3D({
+		moveX:3,
+		moveY:3,
+		bgImage:true,
+		targetAll:true,
+		reverseX: true,
+		reverseY: true
+	});
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
